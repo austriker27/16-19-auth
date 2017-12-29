@@ -5,6 +5,9 @@ This is a RESTful HTTP server with basic authentication using express.
 ## Motivation
 I was motivated by an extreme desire to learn web development which led me to enroll in this program which ultimately led me to this assignment. 
 
+## Deployed
+This application is live on the interwebs, deployed via Heroku. [Check it out](https://super-fun-lab21.herokuapp.com) 
+
 ## Language
 Javascript
 
@@ -25,7 +28,7 @@ Javascript
 - superagent
 
 ## Features
-Setting user auth ability for our cat cloud app. 
+many sweet features.. 
 
 
 ## Installation / How to use
