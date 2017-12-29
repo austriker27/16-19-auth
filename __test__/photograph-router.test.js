@@ -13,18 +13,18 @@ const photographMockFactory = require('./lib/photograph-mock-factory');
 const apiURL = `http://localhost:${process.env.PORT}`;
 
 
-describe('/photographs', () => {
+describe('/photograph', () => {
   beforeAll(server.start);
   afterAll(server.stop);
   afterEach(photographMockFactory.remove);
 
-  test('POST /photographs should return a 200 status code and a photograph if there are no errors', () => {
+  test('POST /photograph should return a 200 status code and a photograph if there are no errors', () => {
     let tempAccountMock = null;
     return accountMockFactory.create()
       .then(accountMock => {
         tempAccountMock = accountMock;
         
-        return superagent.post(`${apiURL}/photographs`)
+        return superagent.post(`${apiURL}/photograph`)
           .set(`Authorization', 'Bearer ${accountMock.token}`) 
           .field('title', 'sweet photo')
           .attach('photograph', `${__dirname}/assets/giphy.gif`)

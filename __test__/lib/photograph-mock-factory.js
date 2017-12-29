@@ -2,7 +2,7 @@
 
 const faker = require('faker');
 const accountMockFactory = require('./account-mock-factory');
-const Photography = require('../../model/sound');
+const Photograph = require('../../model/photograph');
 
 const photographMockFactory = module.exports = {};
 
@@ -11,7 +11,7 @@ photographMockFactory.create = () => {
   return accountMockFactory.create()
     .then(accountMock => {
       mock.accountMock = accountMock;
-      return new Photography({
+      return new Photograph({
         account : accountMockFactory.account._id,
         title : faker.lorem.words(2),
         url : faker.random.image(),
@@ -26,6 +26,6 @@ photographMockFactory.create = () => {
 photographMockFactory.remove = () => {
   return Promise.all([
     accountMockFactory.remove(),
-    Photography.remove({})
+    Photograph.remove({}),
   ]);
 };

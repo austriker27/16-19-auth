@@ -8,14 +8,14 @@ const Photograph = require('../model/photograph');
 
 // FOR UPLOADING : 
 const multer = require('multer');
-const upload = multer({ dest: `${__dirname}/../temp}` });
+const upload = multer({ dest: `${__dirname}/../temp` });
 const S3 = require('../lib/s3');
 
 const photographRouter = module.exports = new Router();
 
 photographRouter.post('/photographs', bearerAuthMiddleware, upload.any(), (request, response, next) => {
   if(!request.account)
-    return new(new httpErrors(404, '__ERROR__ not found'));
+    return next(new httpErrors(404, '__ERROR__ not found'));
 
   if(!request.body.title || request.files.length > 1 || request.files[0].fieldname !== 'photograph')
     return next(new httpErrors(400, '__ERROR__ invalid request'));
