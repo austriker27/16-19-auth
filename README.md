@@ -1,50 +1,53 @@
-![cf](https://i.imgur.com/7v5ASc8.png) Lab 17: Authentication
-======
+# Code Fellows 401
+## Authentication
+This is a RESTful HTTP server with basic authentication using express.  
 
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-susan`
-* Open a pull request to this repository
-* Submit on canvas a question and observation, how long you spent, and a link to your pull request
+## Motivation
+I was motivated by an extreme desire to learn web development which led me to enroll in this program which ultimately led me to this assignment. 
 
-## Resources
-* [express docs](http://expressjs.com/en/4x/api.html)
-* [mongoosse guide](http://mongoosejs.com/docs/guide.html)
-* [mongoosse api docs](http://mongoosejs.com/docs/api.html)
+## Language
+Javascript
 
-## Configuration 
-Configure the root of your repository with the following files and directories. Thoughfully name and organize any aditional configuration or module files.
-* **README.md** - contains documentation
-* **.env** - contains env variables **(should be git ignored)**
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file 
-* **.eslintrc** - contains the course linter configuratoin
-* **.eslintignore** - contains the course linter ignore configuration
-* **package.json** - contains npm package config
-  * create a `lint` script for running eslint
-  * create a `test` script for running tests
-  * create a `start` script for running your server
-  * create `dbon` and `dboff` scripts for managing the mongo daemon
-* **db/** - contains mongodb files **(should be git ignored)**
-* **lib/** - contains module definitions
-* **model/** - contains module definitions
-* **route/** - contains module definitions
-* **\_\_test\_\_/** - contains test modules
+## Dependencies necessary 
+### for production: 
+- bcrypt
+- body-parser
+- dotenv
+- express
+- http-errors
+- jsonwebtoken
+- mongoose
+- winston
+### for development: 
+- eslint
+- faker
+- jest 
+- superagent
 
-## Feature Tasks  
-For this assignment you will be building a RESTful HTTP server with basic authentication useing express.
+## Features
+Setting user auth ability for our cat cloud app. 
 
-#### Account
-Create a user `Account` model that keeps track of a username, email, hashed password, and token seed. The model should be able to regenorate tokens using json web token. 
 
-#### Server Endpoints
-* `POST /signup` 
-  * pass data as stringifed JSON in the body of a **POST** request to create a new account
-  * on success respond with a 200 status code and an authentication token
-  * on failure due to a bad request send a 400 status code
+## Installation / How to use
+- clone this repo to your machine
+- run `npm install` to install all dependencies
+- run `npm run dbon` to turn on the mongoDB server
+- run `npm test` to run tests
 
 ## Tests
-* POST should test for 200, 400, and 409 (if any keys are unique)
+Tests will test for 200, 400 and 409 status codes on the POST route.
 
-## Documentation
-In the README.md write documention for starting your server and makeing requests to each endpoint it provides. The documentaion should describe how the server would respond to valid and invalid requests.
+## Contribute
+If anyone wants to help, feel free to open a pull request and send it over. PRs will be answered in the order they are received. 
+
+## Credits
+Initial codebase created by the Vinincio Vladimir Sanchez Trejo. 
+Mad props to anyone who helped me and my parents for birthing me.
+
+#### Anything else that seems useful
+```You miss 100% of the shots you don't take. Wayne Gretzky.``` 
+
+-Michael Scott.  
+
+## License
+MIT License
